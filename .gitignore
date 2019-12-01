@@ -4,18 +4,22 @@
 /dist
 /tmp
 /out-tsc
+/out
+/build
+/classes
 
 # dependencies
-/node_modules
+node_modules
 
 # IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
+*.idea
+*.project
+*.classpath
+*.c9
 *.launch
-.settings/
+*.settings
 *.sublime-workspace
+*.iml
 
 # IDE - VSCode
 .vscode/*
@@ -37,3 +41,32 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.ear
+*.tar.gz
+*.rar
+*.cmd
+*.classpath
+*.settings
+*.project
+*.mvn
+*.gradle
+mvnw
+target
+*.DS_Store
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
