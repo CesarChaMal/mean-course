@@ -7,9 +7,15 @@
 /out
 /build
 /classes
+/Debug
+/Release
+/x64
+/Bin
+/Obj
+/target
 
 # dependencies
-node_modules
+/node_modules
 
 # IDEs and editors
 *.idea
@@ -64,8 +70,7 @@ Thumbs.db
 *.project
 *.mvn
 *.gradle
-mvnw
-target
+*.nupkg
 *.DS_Store
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
