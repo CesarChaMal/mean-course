@@ -60,6 +60,8 @@ Thumbs.db
 
 # Compiled class file
 *.class
+ipch
+.ipch
 
 # Log file
 *.log
