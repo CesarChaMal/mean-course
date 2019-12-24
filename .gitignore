@@ -42,6 +42,10 @@ import-summary.txt
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+*.suo
+*.db
+.vs
+*.user
 
 # misc
 connect.lock
