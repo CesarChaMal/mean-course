@@ -1,27 +1,27 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-dist
-tmp
-out-tsc
-out
-build
-classes
-Debug
-Release
-x64
-bin
-gen
-Obj
-target
-proguard
-nbproject
-captures
+/dist
+/tmp
+/out-tsc
+/out
+/build
+/classes
+/Debug
+/Release
+/x64
+/bin
+/gen
+/Obj
+/target
+/proguard
+/nbproject
+/captures
 
 # dependencies
-node_modules
-bower_components
-.sass-cache
+/node_modules
+/bower_components
+/.sass-cache
 
 # IDEs and editors
 .project
@@ -44,7 +44,7 @@ import-summary.txt
 !.vscode/extensions.json
 *.suo
 *.db
-.vs
+/.vs
 *.user
 
 # misc
@@ -64,7 +64,7 @@ Thumbs.db
 
 # Compiled class file
 *.class
-ipch
+/ipch
 .ipch
 
 # Log file
