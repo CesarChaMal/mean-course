@@ -25,10 +25,10 @@
 
 # IDEs and editors
 .project
-.classpath
-.settings
-.springBeans
-.idea
+/.classpath
+/.settings
+/.springBeans
+/.idea
 .iml
 .ipr
 .iws
