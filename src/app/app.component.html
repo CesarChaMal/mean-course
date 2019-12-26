@@ -1,8 +1,13 @@
 <!-- <app-header [MyTitle]="title"></app-header> -->
   <app-header [MyTitle]="'MyMessages'"></app-header>
   <main>
-<!-- <app-post-create (postCreatead)="onPostAdded($event)"></app-post-create> -->
-<!-- <app-post-list [posts]="storedPosts"></app-post-list> -->
-    <app-post-create></app-post-create>
-    <app-post-list></app-post-list>
+<!--
+  <app-post-create (postCreatead)="onPostAdded($event)"></app-post-create>
+  <app-post-list [posts]="storedPosts"></app-post-list>
+-->
+<!--
+  <app-post-create></app-post-create>
+  <app-post-list></app-post-list>
+-->
+    <router-outlet></router-outlet>
   </main>
