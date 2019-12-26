@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { PostListComponent } from './posts/post-list/post-list.component';
 
 const routes: RouterModule = [
-  { path: '', component: PostListComponent }
+  { path: '', component: PostListComponent },
   { path: '', component: PostListComponent }
 ];
 
@@ -12,3 +12,8 @@ const routes: RouterModule = [
 
 })
 export class AppRoutingModule {}
+
+
+
+
+
