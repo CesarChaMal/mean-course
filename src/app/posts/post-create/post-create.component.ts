@@ -15,35 +15,22 @@ export class PostCreateComponent implements OnInit {
   enteredTitle = '';
   enteredContent = '';
   post: Post;
+  isLoading = false;
   private mode = 'create';
   private postId: string;
 
-  // @Output()
-  // postCreatead = new EventEmitter<Post>();
-
   constructor(public postsService: PostsService, public route: ActivatedRoute) {}
-
-  // onAddPost(form: NgForm) {
-  //   // const post: Post = {
-  //   //   title: this.enteredTitle,
-  //   //   content: this.enteredContent
-  //   // };
-  //   if (form.invalid) {
-  //     return;
-  //   }
-  //   const post: Post = {
-  //     title: form.value.title,
-  //     content: form.value.content
-  //   };
-  //   this.postCreatead.emit(post);
-  // }
 
   ngOnInit() {
       this.route.paramMap.subscribe( (paramMap: ParamMap) => {
         if (paramMap.has('postId')) {
           this.mode = 'edit';
           this.postId = paramMap.get('postId');
-          this.post = this.postsService.getPost(this.postId);
+          this.isLoading = true;
+          this.postsService.getPost(this.postId).subscribe(postData => {
+            this.isLoading = false;
+            this.post = {id: postData.id, title: postData.title, content: postData.content};
+          });
         } else {
           this.mode = 'create';
           this.postId = null;
@@ -51,11 +38,16 @@ export class PostCreateComponent implements OnInit {
       });
   }
 
-  onAddPost(form: NgForm) {
+  onSavePost(form: NgForm) {
     if (form.invalid) {
       return;
     }
-    this.postsService.addPost(form.value.title, form.value.content);
+    if (this.mode === 'create') {
+      this.postsService.addPost(form.value.title, form.value.content);
+    } else {
+      this.postsService.updatePost(this.postId, form.value.title, form.value.content);
+    }
     form.resetForm();
   }
 }
+
