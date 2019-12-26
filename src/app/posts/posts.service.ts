@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Post } from './post.model';
 import { Subject } from 'rxjs';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
@@ -38,6 +38,10 @@ export class PostsService {
     return this.postsUpdated.asObservable();
   }
 
+  getPost(id: string) {
+    return {...this.posts.find(p => p.id === id)};
+  }
+
   addPost(title: string, content: string) {
     const uri = 'http://localhost:3000/api/posts';
     const post: Post = { id: null, title: title, content: content };
@@ -49,6 +53,10 @@ export class PostsService {
     this.posts.push(post);
     this.postsUpdated.next([...this.posts]);
       });
+  }
+
+  updatePost() {
+
   }
 
   deletePost(postId: string) {
