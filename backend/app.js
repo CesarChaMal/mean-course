@@ -45,6 +45,17 @@ app.post("/api/posts", (req, res, next) => {
   });
 });
 
+app.put("/api/posts/:id", (req, res, next) => {
+  const post = new Post({
+    title: req.body.title,
+    content: req.body.content
+  });
+  Post.updateOne({ _id: req.params.id}, post).then(result => {
+    console.log(resul);
+    res.status(200).json({ message: "Update successful!"});
+  });
+});
+
 app.get("/api/posts", (req, res, next) => {
   Post.find().then(documents => {
   res.status(200).json({
@@ -62,6 +73,6 @@ app.delete("/api/posts/:id", (req, res, next) => {
 });
 module.exports = app;
 
-// "E:\IT Kontrakt\RTDMS\git\mean-course\mongodb-win32-x86_64-2012plus-4.2.1\bin\mongo.exe" "mongodb+srv://cluster0-69rn9.mongodb.net/test"  --username root -p 'admin'
+// "C:\IdeaProjects\mean-course\mongodb-win32-x86_64-2012plus-4.2.1\bin\mongo.exe" "mongodb+srv://cluster0-69rn9.mongodb.net/test"  --username root -p 'admin'
 // ./mongo "mongodb+srv://cluster0-69rn9.mongodb.net/test"  --username root -p 'admin'
 

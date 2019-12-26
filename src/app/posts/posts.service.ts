@@ -55,8 +55,8 @@ export class PostsService {
       });
   }
 
-  updatePost() {
-
+  updatePost(id: string, title: string, content: string) {
+    const post: Post = { id: id, title: title, content: content};
   }
 
   deletePost(postId: string) {
