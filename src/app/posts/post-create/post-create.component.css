@@ -12,6 +12,12 @@ input[type="file"] {
 }
 
 .image-preview {
-  height: 5rem;
   margin: 1rem 0;
+  height: 100%;
+  width: 100%;
+}
+
+.image-preview img {
+  height: 200px;
+  width: 200px;
 }

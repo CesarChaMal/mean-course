@@ -41,9 +41,9 @@ export class PostCreateComponent implements OnInit {
         this.isLoading = true;
         this.postsService.getPost(this.postId).subscribe(postData => {
           this.isLoading = false;
-          this.post = {id: postData.id, title: postData.title, content: postData.content, imagePath: null};
+          this.post = {id: postData.id, title: postData.title, content: postData.content, imagePath: postData.imagePath};
           // Reactive Forms
-          this.form.setValue({'title': this.post.title, 'content': this.post.content});
+          this.form.setValue({'title': this.post.title, 'content': this.post.content, 'image': this.post.imagePath });
           // Reactive Forms
         });
       } else {
@@ -59,7 +59,7 @@ export class PostCreateComponent implements OnInit {
     this.form.get('image').updateValueAndValidity();
     const reader = new FileReader();
     reader.onload = () => {
-      this.imagePreview = (reader.result as string);
+      this.imagePreview = reader.result as string;
     };
     reader.readAsDataURL(file);
     console.log(file);
@@ -77,7 +77,7 @@ export class PostCreateComponent implements OnInit {
     if (this.mode === 'create') {
       this.postsService.addPost(this.form.value.title, this.form.value.content, this.form.value.image);
     } else {
-      this.postsService.updatePost(this.postId, this.form.value.title, this.form.value.content, this.form.value.imagePath);
+      this.postsService.updatePost(this.postId, this.form.value.title, this.form.value.content, this.form.value.image);
     }
     // this.form.reset
     this.form.reset();

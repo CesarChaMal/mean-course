@@ -36,7 +36,7 @@ export class PostsService {
   }
 
   getPost(id: string) {
-    return this.http.get<{id: string, title: string, content: string}>(this.uri + id);
+    return this.http.get<{id: string, title: string, content: string, imagePath: string}>(this.uri + id);
   }
 
   addPost(title: string, content: string, image: File) {
@@ -46,7 +46,6 @@ export class PostsService {
     postData.append('content', content);
     postData.append('image', image, title);
     this.http
-    // .post<{ message: string, postId: string }>(this.uri, post)
     .post<{ message: string, post: Post }>(this.uri, postData)
     .subscribe(responseData => {
       const post: Post = { id: responseData.post.id, title: title, content: content, imagePath: responseData.post.imagePath };
@@ -56,12 +55,29 @@ export class PostsService {
     });
   }
 
-  updatePost(id: string, title: string, content: string, imagePath: string) {
-    const post: Post = { id: id, title: title, content: content, imagePath: imagePath};
-    this.http.put(this.uri + id, post).
+  updatePost(id: string, title: string, content: string, image: File | string) {
+    // const post: Post = { id: id, title: title, content: content};
+    let postData: Post | FormData;
+
+    if (typeof image === 'object') {
+      postData = new FormData();
+      postData.append('id', id);
+      postData.append('title', title);
+      postData.append('content', content);
+      postData.append('image', image, title);
+    } else {
+      postData = {
+        id: id,
+        title: title,
+        content: content,
+        imagePath: image
+      };
+    }
+    this.http.put(this.uri + id, postData).
     subscribe(response => {
       const updatedPosts = [...this.posts];
-      const oldPostIndex = updatedPosts.findIndex(p => p.id === post.id);
+      const oldPostIndex = updatedPosts.findIndex(p => p.id === id);
+      const post: Post = {id: id, title: title, content: content, imagePath: ''};
       updatedPosts[oldPostIndex] = post;
       console.log(response);
       this.posts = updatedPosts;
