@@ -32,6 +32,7 @@ bower_components
 *.db
 *.user
 *.csproj
+*.sdf
 .settings
 .idea
 .ipr
