@@ -28,12 +28,17 @@ export class PostCreateComponent implements OnInit {
 
   ngOnInit() {
     // Reactive forms
+    // this.form = new FormGroup({
+      //   'title': new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
+      //   'content': new FormControl(null, {validators: [Validators.required]}),
+      //   'image': new FormControl(null, {validators: [Validators.required]})
+      // });
+      // Reactive forms
     this.form = new FormGroup({
       'title': new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
       'content': new FormControl(null, {validators: [Validators.required]}),
       'image': new FormControl(null, {validators: [Validators.required], asyncValidators: [mimeType]})
     });
-    // Reactive forms
     this.route.paramMap.subscribe( (paramMap: ParamMap) => {
       if (paramMap.has('postId')) {
         this.mode = 'edit';
@@ -42,8 +47,10 @@ export class PostCreateComponent implements OnInit {
         this.postsService.getPost(this.postId).subscribe(postData => {
           this.isLoading = false;
           this.post = {id: postData.id, title: postData.title, content: postData.content, imagePath: postData.imagePath};
+          console.log(postData.imagePath);
+          console.log(this.post.imagePath);
           // Reactive Forms
-          this.form.setValue({'title': this.post.title, 'content': this.post.content, 'image': this.post.imagePath });
+          this.form.setValue({title: this.post.title, content: this.post.content, image: this.post.imagePath });
           // Reactive Forms
         });
       } else {

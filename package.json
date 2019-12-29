@@ -7,10 +7,10 @@
     "lint:server": "tslint './server/**/*.ts' -c ./server/tslint.json --fix",
     "test:client": "ng test --watch false",
     "e2e:client": "ng e2e",
-    "build": "ng build --prod --sm=false --aot --output-path=dist && npm run server:build",
+    "build": "ng build --prod --aot --output-path=dist && npm run server:build",
     "server:run": "nodemon server.js",
     "server": "node server.js",
-    "server:build": "tsc -p ./server",
+    "server:build": "tsc -p ./server.js",
     "postinstall": "npm run build",
     "build:prod": "ng build --prod --sm=false --aot --output-path=dist"
   },
@@ -38,8 +38,8 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.802.2",
-    "@angular/cli": "~8.3.12",
+    "@angular-devkit/build-angular": "~0.803.21",
+    "@angular/cli": "^8.3.21",
     "@angular/compiler-cli": "^8.2.11",
     "@angular/language-service": "^8.2.11",
     "@types/jasmine": "~2.8.6",
