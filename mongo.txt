@@ -1,0 +1,11 @@
+./mongo.sh
+show dbs;
+show collections;
+use node-angular;
+db.posts.find().pretty();
+db.posts.remove({})
+db.posts.count();
+
+db.users.find().pretty();
+db.users.remove({})
+db.users.count();

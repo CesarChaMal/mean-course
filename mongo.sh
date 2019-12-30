@@ -8,4 +8,5 @@
 #Cyan         0;36     Light Cyan    1;36
 #Light Gray   0;37     White         1;37
 
-mongodb-win32-x86_64-2012plus-4.2.1/bin/./mongo
+#mongodb-win32-x86_64-2012plus-4.2.1/bin/./mongo "mongodb+srv://root@cluster0-69rn9.mongodb.net/test"
+mongodb-win32-x86_64-2012plus-4.2.1/bin/./mongo "mongodb+srv://root:admin@cluster0-69rn9.mongodb.net/test"
