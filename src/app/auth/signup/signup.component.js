@@ -8,11 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var SignupComponent = /** @class */ (function () {
-    function SignupComponent() {
+    function SignupComponent(authService) {
+        this.authService = authService;
         this.isLoading = false;
     }
     SignupComponent.prototype.onSignup = function (form) {
         console.log(form.value);
+        if (form.invalid) {
+            return;
+        }
+        this.authService.createUser(form.value.email, form.value.password);
     };
     SignupComponent = __decorate([
         core_1.Component({

@@ -1,7 +1,8 @@
 ./mongo.sh
 show dbs;
-show collections;
 use node-angular;
+show collections;
+
 db.posts.find().pretty();
 db.posts.remove({})
 db.posts.count();
