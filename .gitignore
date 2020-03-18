@@ -50,18 +50,6 @@ import-summary.txt
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
-connect.lock
-coverage
-libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-local.properties
-typings
-*.swp
-*.swo
-
 # System Files
 .DS_Store
 Thumbs.db
@@ -97,6 +85,39 @@ ipch
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+#ignore thumbnails created by windows
+Thumbs.db
+
 # Spring Bootstrap artifacts
 dependency-reduced-pom.xml
 README.html
+
+# misc
+connect.lock
+coverage
+libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+local.properties
+typings
+*.swp
+*.swo
+*.obj
+*.exe
+*.pdb
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.ilk
+*.log
+*.dll
+*.lib
+*.sbr
