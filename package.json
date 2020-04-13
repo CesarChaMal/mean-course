@@ -10,11 +10,14 @@
     "build": "ng build --prod --aot --output-path=dist && npm run server:build",
     "server:run": "nodemon server.js",
     "server": "node server.js",
-    "server:build": "tsc -p ./server.js",
+    "server:build": "tsc -p ./src/tsconfig.app.json",
     "postinstall": "npm run build",
     "build:prod": "ng build --prod --sm=false --aot --output-path=dist"
   },
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "registry": "http://localhost:8081/repository/npm-snapshots/"
+  },
   "dependencies": {
     "@angular/animations": "^8.2.11",
     "@angular/cdk": "~6.2.1",

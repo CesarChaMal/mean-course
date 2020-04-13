@@ -19,6 +19,13 @@ var AuthService = /** @class */ (function () {
             console.log(response);
         });
     };
+    AuthService.prototype.login = function (email, password) {
+        var authData = { email: email, password: password };
+        this.http.post(this.uri + 'login', authData)
+            .subscribe(function (response) {
+            console.log(response);
+        });
+    };
     AuthService = __decorate([
         core_1.Injectable({ providedIn: 'root' })
     ], AuthService);
