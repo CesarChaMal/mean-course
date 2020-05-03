@@ -13,8 +13,6 @@ import { mimeType } from './mime-type.validator';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
-  enteredTitle = '';
-  enteredContent = '';
   post: Post;
   isLoading = false;
   // Reactive forms
