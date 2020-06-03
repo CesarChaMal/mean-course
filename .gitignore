@@ -8,6 +8,7 @@
 /bazel-out
 /out
 /build
+/.docker_build
 /classes
 /Debug
 /Release
@@ -19,6 +20,8 @@
 /proguard
 /nbproject
 /captures
+/staticfiles
+/.ruby-version
 
 # dependencies
 /node_modules
@@ -95,15 +98,20 @@ dependency-reduced-pom.xml
 README.html
 
 # misc
+/log/*.log
 /.sass-cache
 /connect.lock
 /coverage
 /libpeerconnection.log
+/RUNNING_PID
 npm-debug.log
 yarn-error.log
 testem.log
 local.properties
+hk-debug
 /typings
+/.local
+/.settings
 *.swp
 *.swo
 *.obj
@@ -124,7 +132,11 @@ local.properties
 *.dll
 *.lib
 *.sbr
+*.pyc
 
 # System Files
 .DS_Store
 Thumbs.db
+
+# Heroku
+.env
