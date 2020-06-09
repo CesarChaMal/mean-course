@@ -38,6 +38,6 @@ app.use("/api/posts", postsRoutes);
 app.use("/api/user", userRoutes);
 module.exports = app;
 
-// "C:\IdeaProjects\mean-course\mongodb-win32-x86_64-2012plus-4.2.1\bin\mongo.exe" "mongodb+srv://cluster0-69rn9.mongodb.net/test"  --username root -p 'admin'
+// "E:\IdeaProjects\mean-course\mongodb-win32-x86_64-2012plus-4.2.1\bin\mongo.exe" "mongodb+srv://cluster0-69rn9.mongodb.net/test"  --username root -p 'admin'
 // ./mongo "mongodb+srv://cluster0-69rn9.mongodb.net/test"  --username root -p 'admin'
 
