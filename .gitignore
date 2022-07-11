@@ -23,6 +23,11 @@
 /staticfiles
 /.ruby-version
 /venv
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/compiled
 
 # dependencies
 /node_modules
@@ -107,6 +112,10 @@ README.html
 /RUNNING_PID
 npm-debug.log
 yarn-error.log
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
 testem.log
 local.properties
 hk-debug
@@ -141,3 +150,4 @@ Thumbs.db
 
 # Heroku
 .env
+.env.backup
